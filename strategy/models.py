@@ -2,7 +2,7 @@ from django.db import models
 
 class Strategy(models.Model):
     id = models.AutoField(primary_key=True)
-    imgs = models.CharField(max_length=1000)
+    imgs = models.JSONField(max_length=1000)
     description = models.CharField(max_length=1000)
     content = models.CharField(max_length=10000)
     userId = models.IntegerField()

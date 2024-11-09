@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import views
+
 urlpatterns = [
     path('api/user/login', views.user_login),
     path('api/user/register', views.user_register),
@@ -19,8 +20,24 @@ urlpatterns = [
     path('api/strategy/list', views.strategy_list),
     path('api/strategy/delete/<int:id>', views.strategy_delete),
     path('api/strategy/update/<int:id>', views.strategy_update),
-    path('api/strategy/<int:id>', views.strategy_update),
+    path('api/strategy/<int:id>', views.strategy_detail),
     path('api/reserve/add', views.reserve_add),
+    path('api/reserve/get/my', views.reserve_get_my),
     path('api/reserve/get/all', views.reserve_get_all),
-    path('api/reserve/<int:id>', views.reserve_detail)
+    path('api/reserve/<int:id>', views.reserve_detail),
+    path('api/evaluation/add', views.evaluation_add),
+    path('api/evaluation/<int:id>', views.evaluation_detail),
+    path('api/scenic/star/add', views.scenic_star_add),
+    path('api/scenic/star/delete', views.scenic_star_delete),
+    path('api/scenic/starred', views.scenic_starred),
+    path('api/strategy/star/add', views.strategy_star_add),
+    path('api/strategy/star/delete', views.strategy_star_delete),
+    path('api/scenic_star/list/my', views.get_scenic_star),
+    path('api/scenic_star/add', views.scenic_star_add),
+    path('api/scenic_star/delete', views.scenic_star_delete),
+    path('api/scenic_starred', views.scenic_starred),
+    path('api/strategy_star/list/my', views.get_strategy_star),
+    path('api/strategy_star/add', views.strategy_star_add),
+    path('api/strategy_star/delete', views.strategy_star_delete),
+    path('api/strategy_starred', views.strategy_starred),
 ]

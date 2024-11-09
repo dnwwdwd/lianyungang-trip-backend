@@ -3,8 +3,8 @@ from django.db import models
 class Scenic(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    imgs = models.CharField(max_length=1000)
-    tags = models.CharField(max_length=200)
+    imgs = models.JSONField(max_length=1000)
+    tags = models.JSONField(max_length=200)
     address = models.CharField(max_length=100)
     price = models.FloatField()
     ticket = models.IntegerField()

@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'scenic',
     'strategy',
     'evaluation',
+    'scenic_star',
+    'strategy_star',
     'user',
     'django.contrib.admin',
     'django.contrib.auth',
