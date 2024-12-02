@@ -32,7 +32,7 @@ def user_login(request):
     if serializer.is_valid():
         username = serializer.validated_data['username']
         password = serializer.validated_data['password']
-        user = User.objects.get(username=username, password=password)
+        user = User.objects.filter(username=username, password=password).first()
         if user is not None:
             custom_login(request, user)  # 登录用户并创建 session
             serializer = UserSerializer(user)
